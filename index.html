@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    body{
+        color: whitesmoke;
+        background: #373243;
+        background-size: 640px;
+        font-family: Roboto, sans-serif;
+        line-height: 120%;
+        margin: 0 40px;
+    }
+    h1,h2,h3,h4,h5,h6,p,ul,ol,li,a{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .app-title{
+        line-height: 120%;
+        margin: 24px 0;
+    }
+    .todo-item, .todo-input{
+        font-size: 20px;
+        padding: 12px 24px;
+        border-radius: 16px;
+        background: rgba(106, 119, 124, 0.80);
+    }
+    .todo-item{
+        position: relative;
+        padding-left: 66px;
+    }
+    .todo-item:not(:last-child){
+        margin-bottom: 12px;
+    }
+    .item-text{
+
+    }
+    .item-id{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: #6a777c;
+        height: 100%;
+        width: 42px;
+        border-radius: 16px 0 0 16px;
+    }
+    .id-number{
+        font-size: 32px;
+        font-weight: 400;
+    }
+    .todo-input{
+        color: white;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+        width: 100%;
+        border: none;
+        outline: none;
+        resize: none;
+        overflow-y: hidden;
+        height: 48px;
+    }
+    .todo-input:active{
+        border: none;
+    }
+    /* Flex */
+    .app-container{
+        display: flex;
+        gap: 80px;
+    }
+    .container-main{
+        flex-shrink: 1;
+        flex-grow: 1;
+    }
+    .container-side{
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 240px;
+    }
+    /*Buttons */
+    .app-button{
+        font-size: 20px;
+        border-radius: 16px;
+        border: none;
+        outline: none;
+        width: 100%;
+        padding: 12px 0;
+    }
+    .app-confirm{
+        box-shadow: green 0 8px 0;
+    }
+    .app-confirm:active{
+        color: white;
+        background: green;
+    }
+    .app-delete{
+        box-shadow: red 0 8px 0;
+    }
+    .app-delete-active{
+        transform: translateY(20%);
+        color: white;
+        background: red;
+    }
+    .container-side .app-button:not(:last-child){
+        margin-bottom: 8px;
+    }
+    /*Media*/
+    @media screen and (max-width: 800px) {
+        .app-container{
+            flex-direction: column-reverse;
+        }
+        .container-side{
+            flex-grow: 1;
+            flex-shrink: 1;
+            width: 100%;
+        }
+    }
+    </style>
+    <title>ToDo List</title>
+</head>
+<body>
+<h1 class="app-title">TODO List by Vasily Gurov</h1>
+<section class="app-container">
+    <div class="container-main">
+        <textarea class="todo-input"></textarea>
+        <ol class="todo-container">
+        </ol>
+    </div>
+    <div class="container-side">
+        <button type="button" class="app-confirm app-button">Write</button>
+        <button type="button" class="app-delete app-button">Delete</button>
+    </div>
+</section>
+<script src="main.js"></script>
+</body>
+</html>
